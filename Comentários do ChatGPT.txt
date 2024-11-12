@@ -1,0 +1,186 @@
+Comentários do ChatGPT:
+
+Vou comentar o seu código em Batch linha por linha para explicar o que cada parte faz:
+
+```batch
+@echo off
+```
+- O comando `@echo off` desativa a exibição dos comandos na tela. O `@` faz com que o próprio comando não apareça.
+
+```batch
+cls
+```
+- Limpa a tela para remover qualquer texto exibido anteriormente.
+
+```batch
+:menu
+```
+- Define um rótulo (`label`) chamado `menu`. Isso funciona como um ponto de retorno no código.
+
+```batch
+cls
+```
+- Limpa a tela novamente.
+
+```batch
+color 2
+```
+- Define a cor do texto. O número `2` representa verde.
+
+```batch
+echo Programando como um raiz!!!
+```
+- Exibe a mensagem "Programando como um raiz!!!" na tela.
+
+```batch
+echo =====================================
+echo *1 - Mostre os arquivos que está na pasta*
+echo *2 - Mostre as informações do sistema onde estou*
+echo *3 - Sair*
+echo =====================================
+```
+- Exibe o menu com opções para o usuário.
+
+```batch
+set /p opcao= Escolha uma opção:
+```
+- O comando `set /p` permite que o usuário insira uma opção e armazena o valor na variável `%opcao%`.
+
+```batch
+echo ---------------------------
+```
+- Exibe uma linha para separar o menu da próxima ação.
+
+```batch
+if %opcao% equ 1 goto opcao1
+```
+- Verifica se a opção escolhida é `1`. Se for, o fluxo vai para o rótulo `:opcao1`.
+
+```batch
+if %opcao% equ 2 goto opcao2
+```
+- Verifica se a opção escolhida é `2`. Se for, o fluxo vai para o rótulo `:opcao2`.
+
+```batch
+if %opcao% equ 3 goto opcao3
+```
+- Verifica se a opção escolhida é `3`. Se for, o fluxo vai para o rótulo `:opcao3`.
+
+```batch
+if %opcao% GEQ 4 goto opcao4
+```
+- Verifica se a opção escolhida é maior ou igual a `4`. Se for, o fluxo vai para o rótulo `:opcao4`.
+
+```batch
+:opcao1
+```
+- Rótulo `:opcao1`, que define o início da execução da opção 1.
+
+```batch
+cls
+```
+- Limpa a tela.
+
+```batch
+dir
+```
+- Exibe todos os arquivos e diretórios da pasta atual.
+
+```batch
+echo ----------
+echo *arquivos lidos*
+echo ----------
+```
+- Exibe uma mensagem indicando que os arquivos foram listados.
+
+```batch
+pause
+```
+- Pausa a execução e espera o usuário pressionar uma tecla para continuar.
+
+```batch
+goto menu
+```
+- Retorna ao menu principal.
+
+```batch
+:opcao2
+```
+- Rótulo `:opcao2`, que define o início da execução da opção 2.
+
+```batch
+cls
+```
+- Limpa a tela.
+
+```batch
+dir
+```
+- Exibe novamente os arquivos e diretórios da pasta atual (parece que aqui você queria exibir as informações do sistema, mas usou `dir` em vez de `systeminfo`).
+
+```batch
+echo ----------
+echo *este é se sistema*
+echo ----------
+```
+- Exibe uma mensagem indicando que as informações foram mostradas.
+
+```batch
+pause
+```
+- Pausa a execução e espera o usuário pressionar uma tecla para continuar.
+
+```batch
+goto menu
+```
+- Retorna ao menu principal.
+
+```batch
+:opcao3
+```
+- Rótulo `:opcao3`, que define o início da execução da opção 3.
+
+```batch
+cls
+```
+- Limpa a tela.
+
+```batch
+exit
+```
+- Fecha o script e sai do prompt de comando.
+
+```batch
+:opcao4
+```
+- Rótulo `:opcao4`, que define o início da execução para opções inválidas (maiores ou iguais a 4).
+
+```batch
+cls
+```
+- Limpa a tela.
+
+```batch
+echo ----------
+echo *Opção Inválida*
+echo ----------
+```
+- Exibe uma mensagem informando que a opção inserida é inválida.
+
+```batch
+pause
+```
+- Pausa a execução e espera o usuário pressionar uma tecla para continuar.
+
+```batch
+goto menu
+```
+- Retorna ao menu principal.
+
+---
+
+### Observações:
+1. No rótulo `:opcao2`, você usou o comando `dir`, mas o texto sugere que você queria exibir informações do sistema. Seria melhor usar `systeminfo` ou `ver` para isso.
+2. O comando `if %opcao% GEQ 4 goto opcao4` cobre qualquer valor maior ou igual a 4, mas não trata opções inválidas menores que 1 (como 0 ou letras).
+
+Ficou claro? Se quiser ajuda para aprimorar o código, estou à disposição!
